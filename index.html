@@ -62,10 +62,10 @@
     <tr><td>Row1 cell1</td><td>Row1 cell2</td></tr>
     </table>
     <form>
-    <input type="button" onclick="insert_Row()" value="Change content"> 
+    <input type="button" onclick="ChangeContent()" value="Change content"> 
     </form>
   <script>
-    function insert_Row(){
+    function ChangeContent(){
       let table = document.getElementById('sampleTable');
       let row = document.createElement('tr');
       row.innerHTML = `<td>Row ${table.childElementCount + 1} cell1</td><td>Row${table.childElementCount + 1} cell2</td>`;
