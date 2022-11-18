@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
   <body>
-  <!-- <p id ="text">Простое задание по JS</p> 
+<!-- <p id ="text">Простое задание по JS</p> 
   <div>
     <button id="jsstyle"
     onclick="js_style()">Style</button>
@@ -70,10 +70,68 @@
       let row = document.createElement('tr');
       row.innerHTML = `<td>Row ${table.childElementCount + 1} cell1</td><td>Row${table.childElementCount + 1} cell2</td>`;
       table.appendChild(row);
+  </script>
 } -->
 
+<!-- <table id="myTable" border="1"> 
+  <tr><td>Row1 cell1</td> 
+  <td>Row1 cell2</td></tr> 
+  <tr><td>Row2 cell1</td> 
+  <td>Row2 cell2</td></tr> 
+  <tr><td>Row3 cell1</td> 
+  <td>Row3 cell2</td></tr> 
+  </table><form> 
+  <input type="button" onclick="changeContent()" value="Change content"> 
+  </form>
+  <script>
+    function changeContent()
+{
+  rn = window.prompt("Input the Row number(0,1,2)", "0");
+  cn = window.prompt("Input the Column number(0,1)","0");
+  content = window.prompt("Input the Cell content");  
+  var x=document.getElementById('myTable').rows[parseInt(rn,10)].cells;
+  x[parseInt(cn,10)].innerHTML=content;
+}
+  </script> -->
 
 
+  <!-- <table id="myTable" border="1">
+  </table>
+  <form>
+    <input type="button" onclick="createTable()" value="Create the table">
+  </form>
+  <script>
+    function createTable(){
+      rn = window.prompt("Input number of rows", 1);
+      cn = window.prompt("Input number of columns",1);
+      for(var r=0;r<parseInt(rn,10);r++){
+        var x=document.getElementById('myTable').insertRow(r);
+        for(var c=0;c<parseInt(cn,10);c++)  
+        {
+          var y=  x.insertCell(c);
+          y.innerHTML="Row-"+r+" Column-"+c; 
+        }
+   }
+}
+  </script> -->
+  
+  <form>
+    <select id="colorSelect">
+    <option>Red</option>
+    <option>Green</option>
+    <option>White</option>
+    <option>Black</option>
+    </select>
+    <input type="button" onclick="removecolor()" value="Select and Remove">
+    </form>
+  <script>
+    function removecolor(){
+      var x=document.getElementById("colorSelect");
+      let del = document.createElement("del")
+      del.innerHTML = `элемент ${x.options[x.selectedIndex].text} был удалён`
+      document.body.append(del);
+      x.remove(x.selectedIndex);
+}
   </script>
   </body>
 </html>
